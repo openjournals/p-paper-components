@@ -1,0 +1,54 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-author-list" attributes="">
+  <template>
+    <content></content>
+
+    <div id="affiliations">
+      <template repeat="{{affiliation, index in affiliations}}">
+        <p class='affilication'><sup>{{index + 1}}</sup> {{affiliation}}</p>
+      </template>
+    </div>
+
+
+    <style>
+      :host{
+        display: block;
+        margin: 20px 20px;
+        line-height: 25px;
+      }
+      .affilication{
+        line-height: 15px;
+        font-style: bold;
+      }
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      affiliations: [],
+      ready:    function() {
+      },
+      affNoForAffiliation: function(aff){
+        return this.affiliations.indexOf(aff) + 1
+      },
+      domReady: function(){
+        affiliations = []
+        this.querySelectorAll('p-author').array().forEach(function(author){
+          if(affiliations.indexOf(author.affiliation) == -1)
+            affiliations.push(author.affiliation)
+        })
+        this.affiliations = affiliations;
+        this.updateAuthorAffNos()
+      },
+      updateAuthorAffNos: function(){
+        self = this
+        this.querySelectorAll('p-author').array().forEach(function(author){
+          author.affNo = self.affNoForAffiliation(author.affiliation);
+        });
+      }
+
+    });
+  </script>
+</polymer-element>

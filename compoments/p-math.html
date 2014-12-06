@@ -1,0 +1,30 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-math" attributes="inline">
+  <template>
+
+    <div id="result"></div>
+
+    <style>
+      [unresolved] {
+        opacity: 0;
+      }
+    </style>
+
+  </template>
+
+
+  <script>
+    Polymer({
+      inline: true,
+      ready: function() {
+
+      },
+      attached: function(){
+        displayText = this.inline ? "\\displaystyle " : ""
+        this.shadowRoot.querySelector("#result").innerHTML = katex.renderToString(displayText + this.innerHTML)
+      }
+    });
+  </script>
+
+</polymer-element>

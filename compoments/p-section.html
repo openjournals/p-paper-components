@@ -1,0 +1,29 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-section" attributes="context title no">
+  <template>
+    <h3>{{no}} {{title}}</h3>
+    <content></content>
+    
+
+    <style>
+      :host{
+        display: block;
+      },
+      [unresolved] {
+        opacity: 0;
+        /* other custom styles for unresolved elements */
+      }
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      no: '',
+      ready: function() {
+        //...
+      }
+    });
+  </script>
+</polymer-element>

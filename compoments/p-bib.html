@@ -1,0 +1,41 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-bib">
+  <template>
+    <h1>Refrences</h1>
+    <ul>
+      <template repeat="{{refrence, index in refrences}}">
+        <ul class='refrence'>{{ref.text}}</p>
+      </template>
+    </ul>
+
+    <style>
+
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      refrences: [],
+      ready: function() {
+
+      },
+      domReady: function(){
+        this.generateRefLookup()
+      },
+      numberForRef: function(){
+
+      },
+      generateRefLookup: function(){
+        refrences = []
+        this.querySelectorAll('p-ref').array().forEach(function(ref){
+          this.refrences.push( {link: ref.link, text: ref.inner_html, id: ref.id } )
+          window.ref = ref;
+        });
+        console.log("refs",refrences);
+        this.refrences = refrences
+      }
+    });
+  </script>
+</polymer-element>

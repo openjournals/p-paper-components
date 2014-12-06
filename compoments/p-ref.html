@@ -1,0 +1,27 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-ref" attributes="">
+  <template>
+    <content></content>
+
+
+    <style>
+      [unresolved] {
+        opacity: 0;
+        /* other custom styles for unresolved elements */
+      }
+      :host{
+        color: red;
+      }
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      ready: function() {
+        //...
+      }
+    });
+  </script>
+</polymer-element>

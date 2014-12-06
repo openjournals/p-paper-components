@@ -1,0 +1,61 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-paper" attributes="initialOpacity opacityDecayVelocity">
+  <template>
+    <content></content>
+
+
+    <style>
+      [unresolved] {
+        opacity: 0;
+        /* other custom styles for unresolved elements */
+      }
+      :host{
+        width: 70%;
+        height: 100%;
+        margin:  20px auto;
+        font-family: font-family: "Computer Modern Sans";
+        display: block;
+
+      }
+      h1{
+        font-style:bold;
+      }
+    </style>
+
+  </template>
+
+
+
+  <script>
+    Polymer({
+      refrences: [],
+      ready: function() {
+        //...
+      },
+
+      attached: function(){
+        this.setFigureNumbers();
+        this.gatherReferenced();
+        this.setSectionNumbers();
+      },
+
+      setFigureNumbers: function(){
+        this.querySelectorAll('p-figure').array().forEach(function(figure,index){
+          return figure.no = index + 1
+        });
+      },
+
+      setSectionNumbers: function(){
+        this.querySelectorAll('p-section').array().forEach(function(section,index){
+          return section.no = index + 1
+        });
+      },
+      gatherReferenced: function(){
+        this.refrences = this.querySelectorAll('p-ref').array();
+        // console.log(this.refrences)
+      }
+
+    });
+  </script>
+</polymer-element>

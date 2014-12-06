@@ -1,0 +1,37 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-figure" attributes="title">
+  <template>
+    <h3>{{title}}</h3>
+    <content id='#content' select='#content'></content>
+    <p>Fig.{{no}} <content id="#caption" select='#caption'></content></p>
+
+
+    <style>
+      [unresolved] {
+        opacity: 0;
+        /* other custom styles for unresolved elements */
+      }
+      :host{
+        display    : block;
+        text-align : center;
+
+      }
+      #content {
+        display    : block;
+        padding    : 20px
+      }
+
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      no: null,
+      ready: function() {
+        //...
+      }
+    });
+  </script>
+</polymer-element>

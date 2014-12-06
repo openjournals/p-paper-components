@@ -1,0 +1,23 @@
+<link rel="import" href="../components/polymer/polymer.html" >
+
+<polymer-element name="p-author" attributes="affiliation">
+  <template>
+
+    <span><content></content><sup>{{affNo}}</sup></span>
+
+    <style>
+
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      affiliation: '',
+      affNo: null,
+      ready: function() {
+        //...
+      }
+    });
+  </script>
+</polymer-element>

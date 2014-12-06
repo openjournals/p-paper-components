@@ -1,0 +1,21 @@
+{
+  "name": "p-paper-components",
+  "version": "0.0.0",
+  "homepage": "https://github.com/openjournals/p-paper-components",
+  "authors": [
+    "Stuart <stuart@zooniverse.org>"
+  ],
+  "description": "A set of polymer components for academic publishing",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.5.1"
+  }
+}
